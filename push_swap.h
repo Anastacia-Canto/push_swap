@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 15:36:49 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 15:45:31 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		check_args(int argc, char **argv);
 void	create_stack(t_lst **stack, char **argv, int argc);
 t_lst	*new_node(int number);
 void	add_back(t_lst **stack, t_lst *new);
+void	print_stack(t_lst **stack);
 void	clear_stack(t_lst **stack);
 
 #endif

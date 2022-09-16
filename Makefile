@@ -6,14 +6,14 @@
 #    By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 17:02:51 by anastacia         #+#    #+#              #
-#    Updated: 2022/09/16 13:24:24 by anastacia        ###   ########.fr        #
+#    Updated: 2022/09/16 15:53:02 by anastacia        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 $(VERBOSE).SILENT:
 
 NAME = push_swap
-SRC = push_swap list\
+SRC = push_swap src/list src/check_args\
 
 PRINTF = printf/libftprintf.a
 PRINTF_PATH = ./printf

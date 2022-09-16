@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 15:52:46 by anastacia        ###   ########.fr       */
+/*   Created: 2022/09/16 15:52:14 by anastacia         #+#    #+#             */
+/*   Updated: 2022/09/16 16:36:00 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+int	check_args(int argc, char **argv)
 {
-	t_stack	stack;
+	int		i;
+	char	*zero;
 
-	if (!check_args(argc, argv))
+	if (argc < 2)
 		return (0);
-	stack.a = NULL;
-	stack.b = NULL;
-	create_stack(&stack.a, argv, argc);
-	print_stack(&stack.a);
-	clear_stack(&stack.a);
-	return (0);
+	zero = "0";
+	i = 0;
+	while (i < argc - 1)
+	{
+		i++;
+		if ((*argv[i] - zero[0]) != 0)
+		{
+			if (!ft_atoi(argv[i]) || ft_atoi(argv[i]) > INT_MAX
+				|| ft_atoi(argv[i]) < INT_MIN)
+			{
+				ft_printf("Error\n");
+				return (0);
+			}
+		}
+	}
+	return (1);
 }

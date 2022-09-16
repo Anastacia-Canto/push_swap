@@ -6,11 +6,11 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:22:53 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 15:28:51 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 15:51:49 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	create_stack(t_lst **stack, char **argv, int argc)
 {
@@ -69,4 +69,17 @@ void	clear_stack(t_lst **stack)
 		free (*stack);
 		*stack = temp;
 	}
+}
+
+void	print_stack(t_lst **stack)
+{
+	t_lst	*temp;
+
+	temp = (*stack);
+	while (temp->next)
+	{
+		ft_printf("%d\n", temp->number);
+		temp = temp->next;
+	}
+	ft_printf("%d\n", temp->number);
 }
