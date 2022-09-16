@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:22:53 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 15:51:49 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 17:58:25 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ void	create_stack(t_lst **stack, char **argv, int argc)
 	int	i;
 
 	*stack = new_node((int)ft_atoi(argv[1]));
+	(*stack)->size = 1;
 	i = 2;
 	while (i < argc)
 	{
 		add_back(stack, new_node((int)ft_atoi(argv[i])));
+		(*stack)->size++;
 		i++;
 	}
 }

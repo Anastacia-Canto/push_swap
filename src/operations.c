@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 17:38:21 by anastacia        ###   ########.fr       */
+/*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
+/*   Updated: 2022/09/16 18:01:04 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	swap_a(t_lst **stack)
 {
-	t_stack	stack;
+	t_lst	*temp;
+	t_lst	*aux;
+	int		nb1;
+	int		nb2;
 
-	if (!check_args(argc, argv))
-		return (0);
-	stack.a = NULL;
-	stack.b = NULL;
-	create_stack(&stack.a, argv, argc);
-	print_stack(&stack.a);
-	swap_a(&stack.a);
-	ft_printf("Pós swap_a\n");
-	print_stack(&stack.a);
-	clear_stack(&stack.a);
-	return (0);
+	if ((*stack)->size < 2)
+		return ;
+	aux = (*stack);
+	temp = (*stack);
+	nb1 = temp->number;
+	temp = temp->next;
+	nb2 = temp->number;
+	aux->number = nb2;
+	aux = aux->next;
+	aux->number = nb1;
 }

@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 16:56:51 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 17:55:21 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_lst
 	int				number;
 	struct s_lst	*next;
 	struct s_lst	*prev;
+	int				size;
 }	t_lst;
 
 /*Checking arguments*/
@@ -44,5 +45,7 @@ t_lst	*new_node(int number);
 void	add_back(t_lst **stack, t_lst *new);
 void	print_stack(t_lst **stack);
 void	clear_stack(t_lst **stack);
+/*Operations on stakcs*/
+void	swap_a(t_lst **stack);
 
 #endif
