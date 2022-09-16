@@ -6,14 +6,14 @@
 #    By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 17:02:51 by anastacia         #+#    #+#              #
-#    Updated: 2022/09/15 17:25:47 by anastacia        ###   ########.fr        #
+#    Updated: 2022/09/16 13:24:24 by anastacia        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 $(VERBOSE).SILENT:
 
 NAME = push_swap
-SRC = push_swap\
+SRC = push_swap list\
 
 PRINTF = printf/libftprintf.a
 PRINTF_PATH = ./printf
@@ -47,6 +47,8 @@ clean:
 
 fclean: clean
 	$(RM) $(LIBFT) $(PRINTF)
+	make fclean -C $(LIBFT_PATH)
+	make fclean -C $(PRINTF_PATH)
 
 re: fclean all
 
