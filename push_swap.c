@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/15 17:57:22 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 11:25:30 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (!ft_atoi(argv[i]))
+		if (!ft_atoi(argv[i]) || ft_atoi(argv[i]) > 2147483647
+			|| ft_atoi(argv[i]) < -2147483648)
 		{
 			ft_printf("Error\n");
 			return (0);

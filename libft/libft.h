@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:06:58 by ansilva-          #+#    #+#             */
-/*   Updated: 2022/09/13 11:28:26 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 11:22:55 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 size_t	ft_strlen(char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, char *src, size_t dstsize);
