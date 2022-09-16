@@ -6,16 +6,15 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 15:29:10 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 15:37:18 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	check_args(int argc, char **argv)
 {
 	int		i;
-	t_stack	stack;
 
 	if (argc < 2)
 		return (0);
@@ -30,6 +29,15 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	stack;
+
+	if (!check_args(argc, argv))
+		return (0);
 	stack.a = NULL;
 	stack.b = NULL;
 	create_stack(&stack.a, argv, argc);

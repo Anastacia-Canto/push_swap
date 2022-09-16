@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 15:27:18 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/16 15:36:49 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_lst
 	struct s_lst	*prev;
 }	t_lst;
 
+int		check_args(int argc, char **argv);
 /*List creation and free*/
 void	create_stack(t_lst **stack, char **argv, int argc);
 t_lst	*new_node(int number);
