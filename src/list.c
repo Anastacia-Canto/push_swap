@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:22:53 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 17:58:25 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 10:50:29 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	print_stack(t_lst **stack)
 {
 	t_lst	*temp;
 
+	if (!stack || !*stack)
+		return ;
 	temp = (*stack);
 	while (temp->next)
 	{

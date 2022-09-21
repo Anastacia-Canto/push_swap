@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 10:33:29 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 10:48:44 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	push_a(t_lst **stack_a, t_lst **stack_b)
 {
 	if (stack_b && *stack_b)
 	{
-		add_front(stack_a, *stack_b);
-		free (*stack_b);
+		add_front(stack_a, new_node((*stack_b)->number));
+		del_one(stack_b);
 	}
 	return ;
 }
