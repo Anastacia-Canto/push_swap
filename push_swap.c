@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 17:38:21 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 10:33:56 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,27 @@ int	main(int argc, char **argv)
 	stack.b = NULL;
 	create_stack(&stack.a, argv, argc);
 	print_stack(&stack.a);
-	swap_a(&stack.a);
-	ft_printf("Pós swap_a\n");
+	push_b(&stack.a, &stack.b);
+	ft_printf("Pós push_b\n");
+	ft_printf("stack.a:\n");
 	print_stack(&stack.a);
+	ft_printf("stack.b:\n");
+	print_stack(&stack.b);
+	ft_printf("---------------------\n");
+	push_b(&stack.a, &stack.b);
+	ft_printf("Pós push_b\n");
+	ft_printf("stack.a:\n");
+	print_stack(&stack.a);
+	ft_printf("stack.b:\n");
+	print_stack(&stack.b);
+	ft_printf("---------------------\n");
+	push_b(&stack.a, &stack.b);
+	ft_printf("Pós push_b\n");
+	ft_printf("stack.a:\n");
+	print_stack(&stack.a);
+	ft_printf("stack.b:\n");
+	print_stack(&stack.b);
 	clear_stack(&stack.a);
+	clear_stack(&stack.b);
 	return (0);
 }

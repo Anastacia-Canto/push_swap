@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/16 17:55:21 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 09:51:19 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,12 @@ t_lst	*new_node(int number);
 void	add_back(t_lst **stack, t_lst *new);
 void	print_stack(t_lst **stack);
 void	clear_stack(t_lst **stack);
+void	add_front(t_lst **lst, t_lst *new);
+void	del_one(t_lst **lst);
 /*Operations on stakcs*/
-void	swap_a(t_lst **stack);
+void	swap(t_lst **stack);
+void	ss(t_lst **stack_a, t_lst **stack_b);
+void	push_a(t_lst **stack_a, t_lst **stack_b);
+void	push_b(t_lst **stack_a, t_lst **stack_b);
 
 #endif
