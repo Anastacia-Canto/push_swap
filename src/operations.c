@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 12:12:45 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 13:52:32 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,15 @@ void	reverse(t_lst **stack)
 	t_lst	*temp;
 	t_lst	*aux;
 
-	aux = (*stack);
-	temp = (*stack);
-	while (temp->next)
-		temp = temp->next;
-	temp->prev->next = NULL;
-	temp->next = aux;
-	(*stack) = temp;
+	if (stack && *stack  && size(stack) >= 2)
+	{
+		aux = (*stack);
+		temp = (*stack);
+		while (temp->next)
+			temp = temp->next;
+		temp->prev->next = NULL;
+		temp->next = aux;
+		(*stack) = temp;
+	}
+	return ;
 }
