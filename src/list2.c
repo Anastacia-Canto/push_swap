@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:44:45 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 11:23:50 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 11:50:41 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	add_front(t_lst **lst, t_lst *new)
 	else
 	{
 		new->next = *lst;
+		(*lst)->prev = new;
 		*lst = new;
 		return ;
 	}

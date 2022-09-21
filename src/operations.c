@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 11:25:43 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 12:00:53 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,18 @@ void	push_b(t_lst **stack_a, t_lst **stack_b)
 		del_one(stack_a);
 	}
 	return ;
+}
+
+void	rotate(t_lst **stack)
+{
+	t_lst	*temp;
+	t_lst	*aux;
+
+	aux = (*stack);
+	temp = (*stack);
+	while (temp->next)
+		temp = temp->next;
+	temp->prev->next = NULL;
+	temp->next = aux;
+	(*stack) = temp;
 }

@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:22:53 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 11:21:22 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 11:58:52 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	add_back(t_lst **stack, t_lst *new)
 		while (temp->next)
 			temp = temp->next;
 		temp->next = new;
+		new->prev = temp;
 	}
 }
 

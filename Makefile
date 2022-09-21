@@ -6,7 +6,7 @@
 #    By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 17:02:51 by anastacia         #+#    #+#              #
-#    Updated: 2022/09/21 08:45:45 by anastacia        ###   ########.fr        #
+#    Updated: 2022/09/21 12:02:33 by anastacia        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ $(VERBOSE).SILENT:
 
 NAME = push_swap
 SRC = push_swap src/list src/list2 src/check_args\
-	src/operations\
+	src/operations src/operations2\
 
 PRINTF = printf/libftprintf.a
 PRINTF_PATH = ./printf
