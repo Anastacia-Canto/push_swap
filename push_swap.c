@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 12:05:03 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 13:45:26 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,19 @@ int	main(int argc, char **argv)
 	push_b(&stack.a, &stack.b);
 	push_b(&stack.a, &stack.b);
 	push_b(&stack.a, &stack.b);
-	rr(&stack.a, &stack.b);
-	ft_printf("Pós 3x push_b and rotate\n");
+	push_b(&stack.a, &stack.b);
 	ft_printf("stack a:\n");
 	print_stack(&stack.a);
 	ft_printf("stack b:\n");
 	print_stack(&stack.b);
-	push_a(&stack.a, &stack.b);
+	rr(&stack.a, &stack.b);
+	ft_printf("rotate\n");
+	ft_printf("stack a:\n");
+	print_stack(&stack.a);
+	ft_printf("stack b:\n");
+	print_stack(&stack.b);
+	rrr(&stack.a, &stack.b);
+	ft_printf("Pós reverse:\n");
 	ft_printf("stack a:\n");
 	print_stack(&stack.a);
 	ft_printf("stack b:\n");
