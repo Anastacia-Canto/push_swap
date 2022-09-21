@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 10:48:44 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 11:25:43 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	swap(t_lst **stack)
 	int		nb1;
 	int		nb2;
 
-	if ((*stack)->size < 2)
+	if (size(stack) < 2)
 		return ;
 	aux = (*stack);
 	temp = (*stack);
