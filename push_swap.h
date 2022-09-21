@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 12:13:32 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 17:16:35 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,21 @@ void	add_front(t_lst **lst, t_lst *new);
 void	del_one(t_lst **lst);
 int		size(t_lst **stack);
 /*Operations on stakcs*/
-void	swap(t_lst **stack);
+void	swap_a(t_lst **stack, int signal);
+void	swap_b(t_lst **stack, int signal);
 void	ss(t_lst **stack_a, t_lst **stack_b);
 void	push_a(t_lst **stack_a, t_lst **stack_b);
 void	push_b(t_lst **stack_a, t_lst **stack_b);
-void	rotate(t_lst **stack);
+void	rotate_a(t_lst **stack, int signal);
+void	rotate_b(t_lst **stack, int signal);
 void	rr(t_lst **stack_a, t_lst **stack_b);
-void	reverse(t_lst **stack);
+void	reverse_a(t_lst **stack, int signal);
+void	reverse_b(t_lst **stack, int signal);
 void	rrr(t_lst **stack_a, t_lst **stack_b);
+/*sorting*/
+int		checker(t_lst **stack_a, t_lst **stack_b);
+void	sort(t_lst **stack_a, t_lst **stack_b);
+void	cycle_to_b(t_lst **stack_a, t_lst **stack_b);
+void	cycle_to_a(t_lst **stack_a, t_lst **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:44:45 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 11:50:41 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 17:23:17 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int	size(t_lst **stack)
 	t_lst	*temp;
 	int		size;
 
+	if (!stack || !*stack)
+		return (0);
 	size = 0;
 	temp = (*stack);
 	while (temp->next)

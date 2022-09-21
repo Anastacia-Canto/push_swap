@@ -6,13 +6,13 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 13:52:32 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/21 16:47:22 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_lst **stack)
+void	swap_a(t_lst **stack, int signal)
 {
 	t_lst	*temp;
 	t_lst	*aux;
@@ -29,12 +29,38 @@ void	swap(t_lst **stack)
 	aux->number = nb2;
 	aux = aux->next;
 	aux->number = nb1;
+	if (signal == 1)
+		return ;
+	ft_printf("sa\n");
+}
+
+void	swap_b(t_lst **stack, int signal)
+{
+	t_lst	*temp;
+	t_lst	*aux;
+	int		nb1;
+	int		nb2;
+
+	if (size(stack) < 2)
+		return ;
+	aux = (*stack);
+	temp = (*stack);
+	nb1 = temp->number;
+	temp = temp->next;
+	nb2 = temp->number;
+	aux->number = nb2;
+	aux = aux->next;
+	aux->number = nb1;
+	if (signal == 1)
+		return ;
+	ft_printf("sb\n");
 }
 
 void	ss(t_lst **stack_a, t_lst **stack_b)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap_a(stack_a, 1);
+	swap_b(stack_b, 1);
+	ft_printf("ss\n");
 }
 
 void	push_a(t_lst **stack_a, t_lst **stack_b)
@@ -43,6 +69,7 @@ void	push_a(t_lst **stack_a, t_lst **stack_b)
 	{
 		add_front(stack_a, new_node((*stack_b)->number));
 		del_one(stack_b);
+		ft_printf("pa\n");
 	}
 	return ;
 }
@@ -53,24 +80,7 @@ void	push_b(t_lst **stack_a, t_lst **stack_b)
 	{
 		add_front(stack_b, new_node((*stack_a)->number));
 		del_one(stack_a);
-	}
-	return ;
-}
-
-void	reverse(t_lst **stack)
-{
-	t_lst	*temp;
-	t_lst	*aux;
-
-	if (stack && *stack  && size(stack) >= 2)
-	{
-		aux = (*stack);
-		temp = (*stack);
-		while (temp->next)
-			temp = temp->next;
-		temp->prev->next = NULL;
-		temp->next = aux;
-		(*stack) = temp;
+		ft_printf("pb\n");
 	}
 	return ;
 }
