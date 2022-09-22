@@ -14,14 +14,15 @@
 
 void	sort(t_lst **stack_a, t_lst **stack_b)
 {
-	if (checker(stack_a, stack_b) == 0)
-		cycle_to_b(stack_a, stack_b);
-	if (checker(stack_a, stack_b) == 0)
-		cycle_to_a(stack_a, stack_b);
-	if (checker(stack_a, stack_b) == 0)
-		sort(stack_a, stack_b);
-	else
+	printf_mem(stack_a);
+	if (checker(stack_a, stack_b) == 1)
 		return ;
+	if (size(stack_a) <= 3)
+	{
+		while (checker(stack_a, stack_b) == 0)
+			small_sort(stack_a);
+	}
+	return ;
 }
 
 int	checker(t_lst **stack_a, t_lst **stack_b)
@@ -40,48 +41,27 @@ int	checker(t_lst **stack_a, t_lst **stack_b)
 	return (1);
 }
 
-void	cycle_to_b(t_lst **stack_a, t_lst **stack_b)
+void	small_sort(t_lst **stack_a)
 {
-	t_lst	*temp_a;
-	t_lst	*temp_b;
-
-	while (size(stack_a) > 0)
-	{
-		if (size(stack_a) > 1)
-		{
-			temp_a = (*stack_a)->next;
-			if (temp_a->number < temp_a->prev->number)
-				swap_a(stack_a, 0);
-		}
-		push_b(stack_a, stack_b);
-		if (size(stack_b) > 1)
-		{
-			temp_b = (*stack_b)->next;
-			if (temp_b->number > temp_b->prev->number)
-				swap_b(stack_b, 0);
-		}
-	}
+	t_lst	*temp;
+	
+	temp = (*stack_a)->next;
+	if (temp->number < temp->prev->number)
+		swap_a(stack_a, 0);
+	else
+		reverse_a(stack_a, 0);
+	printf_mem(stack_a);
 }
 
-void	cycle_to_a(t_lst **stack_a, t_lst **stack_b)
+void	printf_mem(t_lst **stack)
 {
-	t_lst	*temp_a;
-	t_lst	*temp_b;
+	t_lst	*temp;
 
-	while (size(stack_b) > 0)
+	temp = (*stack);
+	while (temp->next)
 	{
-		if (size(stack_b) > 1)
-		{
-			temp_b = (*stack_b)->next;
-			if (temp_b->number > temp_b->prev->number)
-				swap_b(stack_b, 0);
-		}
-		push_a(stack_a, stack_b);
-		if (size(stack_a) > 1)
-		{
-			temp_a = (*stack_a)->next;
-			if (temp_a->number < temp_a->prev->number)
-				swap_a(stack_a, 0);
-		}
+		ft_printf("#%d: %p\n", temp->number, temp->next);
+		temp = temp->next;
 	}
+	ft_printf("#%d: %p\n", temp->number, temp->next);
 }

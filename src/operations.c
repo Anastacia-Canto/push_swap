@@ -29,6 +29,7 @@ void	swap_a(t_lst **stack, int signal)
 	aux->number = nb2;
 	aux = aux->next;
 	aux->number = nb1;
+	aux = aux->next;
 	if (signal == 1)
 		return ;
 	ft_printf("sa\n");

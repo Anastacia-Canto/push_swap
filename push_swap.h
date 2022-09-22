@@ -37,6 +37,7 @@ typedef struct s_lst
 
 /*Checking arguments*/
 int		check_args(int argc, char **argv);
+int		check_stranger_things(char *str);
 int		check_duplicates(int argc, char **argv);
 /*List creation and free*/
 void	create_stack(t_lst **stack, char **argv, int argc);
@@ -62,7 +63,7 @@ void	rrr(t_lst **stack_a, t_lst **stack_b);
 /*sorting*/
 int		checker(t_lst **stack_a, t_lst **stack_b);
 void	sort(t_lst **stack_a, t_lst **stack_b);
-void	cycle_to_b(t_lst **stack_a, t_lst **stack_b);
-void	cycle_to_a(t_lst **stack_a, t_lst **stack_b);
+void	small_sort(t_lst **stack_a);
+void	printf_mem(t_lst **stack);
 
 #endif

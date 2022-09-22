@@ -44,3 +44,4 @@ void	rr(t_lst **stack_a, t_lst **stack_b)
 	rotate_b(stack_b, 1);
 	ft_printf("rr\n");
 }
+

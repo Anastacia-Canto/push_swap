@@ -17,7 +17,7 @@ int	check_args(int argc, char **argv)
 	int		i;
 	char	*zero;
 
-	if (argc < 2)
+	if (argc <= 2)
 		return (0);
 	zero = "0";
 	i = 0;
@@ -27,9 +27,10 @@ int	check_args(int argc, char **argv)
 		if ((*argv[i] - zero[0]) != 0)
 		{
 			if (!ft_atoi(argv[i]) || ft_atoi(argv[i]) > INT_MAX
-				|| ft_atoi(argv[i]) < INT_MIN || !check_duplicates(argc, argv))
+				|| ft_atoi(argv[i]) < INT_MIN || !check_duplicates(argc, argv)
+				|| !check_stranger_things(argv[i]))
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				return (0);
 			}
 		}
@@ -52,6 +53,22 @@ int	check_duplicates(int argc, char **argv)
 				return (0);
 			j++;
 		}
+		i++;
+	}
+	return (1);
+}
+
+int	check_stranger_things(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (i < (int)ft_strlen(str))
+	{
+		if ((str[i]) < 48 || str[i] > 57)
+			return (0);
 		i++;
 	}
 	return (1);

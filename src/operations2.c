@@ -16,16 +16,19 @@ void	reverse_a(t_lst **stack, int signal)
 {
 	t_lst	*temp;
 	t_lst	*aux;
+	int		nb1;
+	int		nb2;
 
 	if (stack && *stack && size(stack) >= 2)
 	{
 		aux = (*stack);
+		nb1 = aux->number;
 		temp = (*stack);
 		while (temp->next)
 			temp = temp->next;
-		temp->prev->next = NULL;
-		temp->next = aux;
-		(*stack) = temp;
+		nb2 = temp->number;
+		aux->number = nb2;
+		temp->number = nb1;
 		if (signal == 1)
 			return ;
 		ft_printf("rra\n");
@@ -37,16 +40,19 @@ void	reverse_b(t_lst **stack, int signal)
 {
 	t_lst	*temp;
 	t_lst	*aux;
+	int		nb1;
+	int		nb2;
 
 	if (stack && *stack && size(stack) >= 2)
 	{
 		aux = (*stack);
+		nb1 = aux->number;
 		temp = (*stack);
 		while (temp->next)
 			temp = temp->next;
-		temp->prev->next = NULL;
-		temp->next = aux;
-		(*stack) = temp;
+		nb2 = temp->number;
+		aux->number = nb2;
+		temp->number = nb1;
 		if (signal == 1)
 			return ;
 		ft_printf("rrb\n");
