@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:52:11 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 16:52:36 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/23 10:53:26 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ void	rr(t_lst **stack_a, t_lst **stack_b)
 	rotate_b(stack_b, 1);
 	ft_printf("rr\n");
 }
-

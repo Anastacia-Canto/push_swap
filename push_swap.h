@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 17:16:35 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/23 14:41:48 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ void	print_stack(t_lst **stack);
 void	clear_stack(t_lst **stack);
 void	add_front(t_lst **lst, t_lst *new);
 void	del_one(t_lst **lst);
+void	del_last(t_lst **lst);
 int		size(t_lst **stack);
+void	printf_mem(t_lst **stack);
 /*Operations on stakcs*/
 void	swap_a(t_lst **stack, int signal);
 void	swap_b(t_lst **stack, int signal);
@@ -61,9 +63,10 @@ void	reverse_a(t_lst **stack, int signal);
 void	reverse_b(t_lst **stack, int signal);
 void	rrr(t_lst **stack_a, t_lst **stack_b);
 /*sorting*/
-int		checker(t_lst **stack_a, t_lst **stack_b);
+int		checker(t_lst **stack_a);
 void	sort(t_lst **stack_a, t_lst **stack_b);
-void	small_sort(t_lst **stack_a);
-void	printf_mem(t_lst **stack);
+void	small_sort(t_lst **stack_a, t_lst **stack_b);
+void	sort_three(t_lst **stack_a);
+void	find_min_max(t_lst **stack_a, int *min, int *max);
 
 #endif
