@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/23 14:41:48 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/23 15:40:45 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	rrr(t_lst **stack_a, t_lst **stack_b);
 int		checker(t_lst **stack_a);
 void	sort(t_lst **stack_a, t_lst **stack_b);
 void	small_sort(t_lst **stack_a, t_lst **stack_b);
+void	small_sort_a(t_lst **stack_a, t_lst **stack_b, int min, int max);
 void	sort_three(t_lst **stack_a);
 void	find_min_max(t_lst **stack_a, int *min, int *max);
 
