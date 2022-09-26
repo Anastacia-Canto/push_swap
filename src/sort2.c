@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:41:03 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/26 14:46:03 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/26 17:28:06 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	small_sort(t_lst **stack_a, t_lst **stack_b)
 	int		max;
 	int		min;
 
-	find_min_max(stack_a, &min, &max);
+	find_min(stack_a, &min);
+	find_max(stack_a, &max);
 	small_sort_a(stack_a, stack_b, min, max);
 	while (size(stack_b) > 0)
 	{
@@ -67,20 +68,32 @@ void	small_sort_a(t_lst **stack_a, t_lst **stack_b, int min, int max)
 	return ;
 }
 
-void	find_min_max(t_lst **stack, int *min, int *max)
+void	find_max(t_lst **stack, int *max)
+{
+	t_lst	*temp;
+
+	temp = (*stack);
+	*max = (*stack)->number;
+	while (temp->next)
+	{
+		temp = temp->next;
+		if (temp->number >= *max)
+			*max = temp->number;
+	}
+	return ;
+}
+
+void	find_min(t_lst **stack, int *min)
 {
 	t_lst	*temp;
 
 	temp = (*stack);
 	*min = (*stack)->number;
-	*max = (*stack)->number;
 	while (temp->next)
 	{
 		temp = temp->next;
 		if (temp->number <= *min)
 			*min = temp->number;
-		else if (temp->number >= *max)
-			*max = temp->number;
 	}
 	return ;
 }
