@@ -1,4 +1,4 @@
 # push_swap
 
-tester: https://github.com/anolivei/Push_swap42
+tester: https://github.com/laisarena/push_swap_tester
 
