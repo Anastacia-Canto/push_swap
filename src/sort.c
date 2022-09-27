@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 15:50:35 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/27 13:45:18 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 14:08:27 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort(t_lst **stack_a, t_lst **stack_b)
 	else if (size(stack_a) <= 100)
 		medium_sort(stack_a, stack_b);
 	else
-		medium_sort(stack_a, stack_b);
+		big_sort(stack_a, stack_b);
 	return ;
 }
 
@@ -43,11 +43,11 @@ int	checker(t_lst **stack_a)
 
 void	medium_sort(t_lst **stack_a, t_lst **stack_b)
 {
-	int		min;
-	int		max;
-	int		range;
-	int		i;
-	int		first;
+	int	min;
+	int	max;
+	int	range;
+	int	i;
+	int	first;
 
 	find_min(stack_a, &min);
 	find_max(stack_a, &max);
