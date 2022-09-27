@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 15:50:35 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/26 17:50:27 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 13:45:18 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,24 @@ void	medium_sort(t_lst **stack_a, t_lst **stack_b)
 {
 	int		min;
 	int		max;
-	int		pivot;
+	int		range;
+	int		i;
+	int		first;
 
 	find_min(stack_a, &min);
 	find_max(stack_a, &max);
-	pivot = min + ((max - min) / 2);
-	split(stack_a, stack_b, pivot, max + 1);
-	sort_b(stack_a, stack_b);
-	split(stack_a, stack_b, min, pivot);
-	sort_b(stack_a, stack_b);
+	range = (max - min) / 4;
+	i = 4;
+	while (i > 0)
+	{
+		i--;
+		first = min + i * range;
+		if (i == 3)
+			split(stack_a, stack_b, first, max + 1);
+		else
+			split(stack_a, stack_b, first, first + range);
+		sort_b(stack_a, stack_b);
+	}
 }
 
 void	sort_b(t_lst **stack_a, t_lst **stack_b)
