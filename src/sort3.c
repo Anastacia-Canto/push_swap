@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:40:46 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/27 14:26:23 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 14:58:44 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	big_sort(t_lst **stack_a, t_lst **stack_b)
 
 	find_min(stack_a, &min);
 	find_max(stack_a, &max);
-	range = (max - min) / 10;
-	i = 10;
+	range = (max - min) / 8;
+	i = 8;
 	while (i > 0)
 	{
 		i--;
-		if (i == 9)
+		if (i == 7)
 			split(stack_a, stack_b, min + i * range, max + 1);
 		else
 			split(stack_a, stack_b, min + i * range, min + (i + 1) * range);
