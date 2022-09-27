@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:02 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/21 16:47:22 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:17:55 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	swap_a(t_lst **stack, int signal)
 	aux = aux->next;
 	if (signal == 1)
 		return ;
-	ft_printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	swap_b(t_lst **stack, int signal)
@@ -54,14 +54,14 @@ void	swap_b(t_lst **stack, int signal)
 	aux->number = nb1;
 	if (signal == 1)
 		return ;
-	ft_printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_lst **stack_a, t_lst **stack_b)
 {
 	swap_a(stack_a, 1);
 	swap_b(stack_b, 1);
-	ft_printf("ss\n");
+	write(1, "ss\n", 3);
 }
 
 void	push_a(t_lst **stack_a, t_lst **stack_b)
@@ -70,7 +70,7 @@ void	push_a(t_lst **stack_a, t_lst **stack_b)
 	{
 		add_front(stack_a, new_node((*stack_b)->number));
 		del_one(stack_b);
-		ft_printf("pa\n");
+		write(1, "pa\n", 3);
 	}
 	return ;
 }
@@ -81,7 +81,7 @@ void	push_b(t_lst **stack_a, t_lst **stack_b)
 	{
 		add_front(stack_b, new_node((*stack_a)->number));
 		del_one(stack_a);
-		ft_printf("pb\n");
+		write(1, "pb\n", 3);
 	}
 	return ;
 }

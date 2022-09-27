@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:13:23 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/26 15:17:58 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:11:08 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	stack.b = NULL;
 	create_stack(&stack.a, argv, argc);
 	sort(&stack.a, &stack.b);
-	// print_stack(&stack.a);
 	clear_stack(&stack.a);
 	clear_stack(&stack.b);
 	return (0);

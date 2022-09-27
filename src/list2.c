@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:44:45 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/23 15:06:32 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:05:16 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,4 @@ int	size(t_lst **stack)
 	}
 	size++;
 	return (size);
-}
-
-void	printf_mem(t_lst **stack)
-{
-	t_lst	*temp;
-
-	temp = (*stack);
-	while (temp->next)
-	{
-		ft_printf("#%d: %p\n", temp->number, temp->next);
-		temp = temp->next;
-	}
-	ft_printf("#%d: %p\n", temp->number, temp->next);
 }

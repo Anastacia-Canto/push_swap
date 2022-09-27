@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:52:11 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/23 10:53:26 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:18:27 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	rotate_a(t_lst **stack, int signal)
 		del_one(stack);
 		if (signal == 1)
 			return ;
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 	}
 	return ;
 }
@@ -33,7 +33,7 @@ void	rotate_b(t_lst **stack, int signal)
 		del_one(stack);
 		if (signal == 1)
 			return ;
-		ft_printf("rb\n");
+		write(1, "rb\n", 3);
 	}
 	return ;
 }
@@ -42,5 +42,5 @@ void	rr(t_lst **stack_a, t_lst **stack_b)
 {
 	rotate_a(stack_a, 1);
 	rotate_b(stack_b, 1);
-	ft_printf("rr\n");
+	write(1, "rr\n", 3);
 }

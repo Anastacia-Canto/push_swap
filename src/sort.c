@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 15:50:35 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/27 16:13:27 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:10:26 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,28 @@ void	split(t_lst **stack_a, t_lst **stack_b, int first, int last)
 			rotate_a(stack_a, 0);
 	}
 	return ;
+}
+
+void	big_sort(t_lst **stack_a, t_lst **stack_b, int chunks)
+{
+	int	min;
+	int	max;
+	int	range;
+	int	i;
+	int	last_chunk;
+
+	find_min(stack_a, &min);
+	find_max(stack_a, &max);
+	range = (max - min) / chunks;
+	last_chunk = chunks - 1;
+	i = chunks;
+	while (i > 0)
+	{
+		i--;
+		if (i == last_chunk)
+			split(stack_a, stack_b, min + i * range, max + 1);
+		else
+			split(stack_a, stack_b, min + i * range, min + (i + 1) * range);
+		sort_b(stack_a, stack_b);
+	}
 }

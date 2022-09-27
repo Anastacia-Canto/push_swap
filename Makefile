@@ -6,7 +6,7 @@
 #    By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 17:02:51 by anastacia         #+#    #+#              #
-#    Updated: 2022/09/26 15:51:09 by anastacia        ###   ########.fr        #
+#    Updated: 2022/09/27 17:19:20 by anastacia        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,7 @@ $(VERBOSE).SILENT:
 NAME = push_swap
 SRC = push_swap src/list src/list2 src/check_args\
 	src/operations src/operations2 src/operations3\
-	src/sort src/sort2 src/sort3\
-
-PRINTF = printf/libftprintf.a
-PRINTF_PATH = ./printf
+	src/sort src/sort2\
 
 LIBFT = libft/libft.a
 LIBFT_PATH = ./libft
@@ -32,8 +29,8 @@ CFLAGS = -Wall -Werror -Wextra -I. -fsanitize=address
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(PRINTF) $(SRC:=.o)
-	$(CC) $(CFLAGS) $(SRC:=.o) $(LIBFT) $(PRINTF) -o $(NAME)
+$(NAME): $(LIBFT) $(SRC:=.o)
+	$(CC) $(CFLAGS) $(SRC:=.o) $(LIBFT) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I. -c $< -o $@
@@ -41,16 +38,12 @@ $(NAME): $(LIBFT) $(PRINTF) $(SRC:=.o)
 $(LIBFT):
 	make -C $(LIBFT_PATH)
 
-$(PRINTF):
-	make -C $(PRINTF_PATH)
-
 clean:
 	$(RM) $(NAME) $(SRC:=.o)
 
 fclean: clean
-	$(RM) $(LIBFT) $(PRINTF)
+	$(RM) $(LIBFT)
 	make fclean -C $(LIBFT_PATH)
-	make fclean -C $(PRINTF_PATH)
 
 re: fclean all
 
