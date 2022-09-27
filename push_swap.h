@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:03:09 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/27 17:18:49 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:27:14 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int		check_duplicates(int argc, char **argv);
 void	create_stack(t_lst **stack, char **argv, int argc);
 t_lst	*new_node(int number);
 void	add_back(t_lst **stack, t_lst *new);
-// void	print_stack(t_lst **stack);
 void	clear_stack(t_lst **stack);
 void	add_front(t_lst **lst, t_lst *new);
 void	del_one(t_lst **lst);

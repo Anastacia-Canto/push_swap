@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:22:53 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/27 17:04:53 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 17:27:44 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,3 @@ void	clear_stack(t_lst **stack)
 		*stack = temp;
 	}
 }
-
-// void	print_stack(t_lst **stack)
-// {
-// 	t_lst	*temp;
-
-// 	if (!stack || !*stack)
-// 		return ;
-// 	temp = (*stack);
-// 	while (temp->next)
-// 	{
-// 		ft_printf("%d\n", temp->number);
-// 		temp = temp->next;
-// 	}
-// 	ft_printf("%d\n", temp->number);
-// }
