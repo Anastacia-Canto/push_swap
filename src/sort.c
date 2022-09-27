@@ -6,7 +6,7 @@
 /*   By: anastacia <anastacia@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 15:50:35 by anastacia         #+#    #+#             */
-/*   Updated: 2022/09/27 14:08:27 by anastacia        ###   ########.fr       */
+/*   Updated: 2022/09/27 16:13:27 by anastacia        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	sort(t_lst **stack_a, t_lst **stack_b)
 	else if (size(stack_a) <= 5)
 		small_sort(stack_a, stack_b);
 	else if (size(stack_a) <= 100)
-		medium_sort(stack_a, stack_b);
+		big_sort(stack_a, stack_b, 4);
 	else
-		big_sort(stack_a, stack_b);
+		big_sort(stack_a, stack_b, 8);
 	return ;
 }
 
@@ -39,30 +39,6 @@ int	checker(t_lst **stack_a)
 			return (0);
 	}
 	return (1);
-}
-
-void	medium_sort(t_lst **stack_a, t_lst **stack_b)
-{
-	int	min;
-	int	max;
-	int	range;
-	int	i;
-	int	first;
-
-	find_min(stack_a, &min);
-	find_max(stack_a, &max);
-	range = (max - min) / 4;
-	i = 4;
-	while (i > 0)
-	{
-		i--;
-		first = min + i * range;
-		if (i == 3)
-			split(stack_a, stack_b, first, max + 1);
-		else
-			split(stack_a, stack_b, first, first + range);
-		sort_b(stack_a, stack_b);
-	}
 }
 
 void	sort_b(t_lst **stack_a, t_lst **stack_b)
